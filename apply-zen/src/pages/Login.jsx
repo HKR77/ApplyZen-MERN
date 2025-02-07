@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4445/api/auth/login", formData);
+      const res = await axios.post("https://applyzen-mern.onrender.com/api/auth/login", formData);
       // getting the token and storing it.
       const token = res.data.token;
       const newRefreshToken = res.data.refreshToken;
@@ -35,12 +35,8 @@ const Login = () => {
   };
 
   const handleExplore = async ()=>{
-    let tmpData = {
-      email: "readonlyuser@gmail.com",
-      password: "123456",
-    }
     try {
-      const res = await axios.post("http://localhost:4445/api/auth/login", tmpData);
+      const res = await axios.get("http://applyzen-mern.onrender.com/api/auth/explore");
       const token = res.data.token;
       const newRefreshToken = res.data.refreshToken;
       sessionStorage.setItem("token", token);
@@ -103,12 +99,7 @@ const Login = () => {
               className="text-center w-full px-4 py-2 bg-primary text-white rounded-sm font-semibold mt-4 lg:py-2.5"
             />
 
-            <button
-              className="text-center w-full px-4 py-2 bg-teal-50 text-primary border-2 border-primary rounded-sm mt-4 lg:py-2.5"
-              onClick={handleExplore}
-            >
-              Explore the App
-            </button>
+            
             <h3>
               Not a member yet?{" "}
               <Link className="text-blue-500" to={"/register"}>
@@ -117,6 +108,12 @@ const Login = () => {
             </h3>
           </div>
         </form>
+        <button
+              className="text-center w-full px-4 py-2 bg-teal-50 text-primary border-2 border-primary rounded-sm mt-4 lg:py-2.5"
+              onClick={handleExplore}
+            >
+              Explore the App
+            </button>
       </section>
     </main>
   );

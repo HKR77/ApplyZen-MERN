@@ -19,7 +19,7 @@ export const addJob = async (
 
   try {
     const response = await axios.post(
-      "http://localhost:4445/api/job/add",
+      "https://applyzen-mern.onrender.com/api/job/add",
       formData,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -61,7 +61,7 @@ export const getAllJobs = async (setAllJobs) => {
   }
 
   try {
-    const response = await axios.get("http://localhost:4445/api/job/fetch", {
+    const response = await axios.get("https://applyzen-mern.onrender.com/api/job/fetch", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -175,7 +175,7 @@ export const submitJobDetails = async (job, setPostStatus) => {
 
   try {
     const response = await axios.post(
-      "http://localhost:4445/api/job/update",
+      "https://applyzen-mern.onrender.com/api/job/update",
       job,
       {
         headers: { Authorization: `Bearer ${token}` },
@@ -206,7 +206,7 @@ export const apiJobDelete = async (jobId) => {
 
   try {
     const response = await axios.delete(
-      "http://localhost:4445/api/job/delete",
+      "https://applyzen-mern.onrender.com/api/job/delete",
       {
         headers: { Authorization: `Bearer ${token}` },
         data: { jobId }

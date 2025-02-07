@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:4445/api/auth/register",
+        "https://applyzen-mern.onrender.com/api/auth/register",
         inputDetails
       );
       setMessage(res.data.message);
