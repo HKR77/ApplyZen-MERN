@@ -10,7 +10,7 @@ export const checkAuth = async ({setIsAuthenticated, setIsLoading, navigate}) =>
     }
 
     try {
-      await axios.get("http://localhost:4445/api/home/auth-verify", {
+      await axios.get("https://applyzen-mern.onrender.com/api/home/auth-verify", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setIsAuthenticated(true);
@@ -22,7 +22,7 @@ export const checkAuth = async ({setIsAuthenticated, setIsLoading, navigate}) =>
       ) {
         try {
           // 2. Attempt token refresh:
-          const refreshResponse = await axios.post("http://localhost:4445/api/home/token-refresh", {
+          const refreshResponse = await axios.post("https://applyzen-mern.onrender.com/api/home/token-refresh", {
             refreshToken: localStorage.getItem("refreshToken"), // Get refresh token
           });
 
@@ -64,7 +64,7 @@ export const checkAuth = async ({setIsAuthenticated, setIsLoading, navigate}) =>
 
     try {
       const response = await axios.get(
-        "http://localhost:4445/api/home/profile",
+        "https://applyzen-mern.onrender.com/api/home/profile",
         {
           headers: {
             Authorization: `Bearer ${token}`, //send token in the Authorization header.
@@ -91,7 +91,7 @@ export const checkAuth = async ({setIsAuthenticated, setIsLoading, navigate}) =>
     }
 
     try {
-     await axios.put('http://localhost:4445/api/home/update-profile', updatedUser, {
+     await axios.put('https://applyzen-mern.onrender.com/api/home/update-profile', updatedUser, {
         headers:{
           Authorization: `Bearer ${token}`
         }

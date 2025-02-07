@@ -3,7 +3,10 @@ const router = express.Router();
 const User = require("../model/userModel");
 const hashPassword = require("../middleware/hashing");
 const bcrypt = require("bcrypt"); // For password comparison
-const {generateAuthToken, generateRefreshToken} = require("../middleware/jsonWebToken");
+const {
+  generateAuthToken,
+  generateRefreshToken,
+} = require("../middleware/jsonWebToken");
 const authMiddleware = require("../middleware/authMiddleware");
 
 router.post("/register", async (req, res) => {
@@ -52,14 +55,12 @@ router.post("/login", async (req, res) => {
 
     // take action according to the validation.
     if (isMatch) {
-
       // 5. Create and send a JWT (JSON Web Token) for authentication (Important!)
       const token = generateAuthToken(user); // See function below
       const refreshToken = generateRefreshToken(user);
 
       res.json({ token, refreshToken }); // Send the token to the client
-
-    } else {      
+    } else {
       res.status(401).json({ message: "Invalid credentials" });
     }
   } catch (error) {
@@ -71,6 +72,27 @@ router.post("/login", async (req, res) => {
 router.get("/profile", authMiddleware, (req, res) => {
   // Access user information from req.user (set by the middleware):
   res.json({ user: req.user });
+});
+
+router.get("/explore", async (req, res) => {
+  const email = "readonlyuser@gmail.com";
+  const password = "123456";
+
+  try {
+    const user = await User.findOne({ email });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (isMatch) {
+      const token = generateAuthToken(user);
+      const refreshToken = generateRefreshToken(user);
+
+      res.json({ token, refreshToken });
+    } else {
+      res.status(401).json({ message: "Invalid credentials" });
+    }
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 module.exports = router;
