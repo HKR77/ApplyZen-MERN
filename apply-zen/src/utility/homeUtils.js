@@ -129,3 +129,8 @@ export const checkAuth = async ({setIsAuthenticated, setIsLoading, navigate}) =>
         return "Unknown Page";
     }
   };
+
+
+  export const getExploreToken = async ()=>{
+    
+  }

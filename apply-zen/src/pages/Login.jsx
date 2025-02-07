@@ -34,6 +34,24 @@ const Login = () => {
     }
   };
 
+  const handleExplore = async ()=>{
+    let tmpData = {
+      email: "readonlyuser@gmail.com",
+      password: "123456",
+    }
+    try {
+      const res = await axios.post("http://localhost:4445/api/auth/login", tmpData);
+      const token = res.data.token;
+      const newRefreshToken = res.data.refreshToken;
+      sessionStorage.setItem("token", token);
+      sessionStorage.setItem("refreshToken", newRefreshToken);
+        navigate('/home')
+    } catch (error) {
+      setMessage(error.response.data.message || "An error occoured");
+    }
+
+  }
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -85,12 +103,12 @@ const Login = () => {
               className="text-center w-full px-4 py-2 bg-primary text-white rounded-sm font-semibold mt-4 lg:py-2.5"
             />
 
-            <Link
-              to={"/home"}
+            <button
               className="text-center w-full px-4 py-2 bg-teal-50 text-primary border-2 border-primary rounded-sm mt-4 lg:py-2.5"
+              onClick={handleExplore}
             >
               Explore the App
-            </Link>
+            </button>
             <h3>
               Not a member yet?{" "}
               <Link className="text-blue-500" to={"/register"}>

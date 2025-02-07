@@ -55,10 +55,13 @@ router.put("/update-profile", authMiddleware, async (req, res) => {
 
   try {
     const userId = req.body._id;
+    if (userId==='67a5a5b46c8a6b3822245663') {
+      return res.status(201).json({ message: "ReadOnlyUser can't be modified!" });
+    }
     const user = await User.findById(userId);
   
     if (!user) {
-      res.status(404).json({ message: "User not found!" });
+      return res.status(404).json({ message: "User not found!" });
     }
   
     const updatedUser = await User.findByIdAndUpdate(userId, req.body, {

@@ -19,7 +19,11 @@ router.post("/add", authMiddleware, async (req, res) => {
       resume,
     } = req.body;
 
-    const userId = req.user.userId;
+    const userId = req.user.userId;    
+
+    if (userId=='67a5a5b46c8a6b3822245663') {
+      return res.status(201).json({ message: "ReadOnlyUser can't add new job!" });
+    }
 
     const newJob = new Job({
       userId,
@@ -62,6 +66,9 @@ router.get("/fetch", authMiddleware, async (req, res) => {
 router.post("/update", authMiddleware, async (req, res) => {
   try {
     const userId = req.user.userId;
+    if (userId==='67a5a5b46c8a6b3822245663') {
+      return res.status(201).json({ message: "ReadOnlyUser can't modified existing jobs!" });
+    }
 
     const jobId = req.body._id;
 
@@ -105,6 +112,9 @@ router.post("/update", authMiddleware, async (req, res) => {
 router.delete("/delete", authMiddleware, async (req, res) => {
   try {
     const userId = req.user.userId;
+    if (userId==='67a5a5b46c8a6b3822245663') {
+      return res.status(201).json({ message: "ReadOnlyUser can't delete jobs!" });
+    }
     const jobId = req.body.jobId;
 
     if (!mongoose.Types.ObjectId.isValid(jobId)) {
