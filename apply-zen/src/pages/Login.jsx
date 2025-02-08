@@ -36,7 +36,7 @@ const Login = () => {
 
   const handleExplore = async ()=>{
     try {
-      const res = await axios.get("http://applyzen-mern.onrender.com/api/auth/explore");
+      const res = await axios.get("https://applyzen-mern.onrender.com/api/auth/explore");
       const token = res.data.token;
       const newRefreshToken = res.data.refreshToken;
       sessionStorage.setItem("token", token);
