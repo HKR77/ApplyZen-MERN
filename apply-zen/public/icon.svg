@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="37.496712mm"
+   height="10.583333mm"
+   viewBox="0 0 37.496711 10.583333"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="translate(-8.4527806,-7.9638324)">
+    <rect
+       style="fill:#2cb1bc;fill-opacity:1;stroke-width:0.118"
+       id="rect1"
+       width="10.583333"
+       height="10.583333"
+       x="8.4527807"
+       y="7.9638324"
+       ry="2.3053041" />
+    <path
+       d="m 18.744428,18.255483 h -1.565276 l -3.630107,-1.938088 v 0 l -3.313486,1.938088 H 8.7444666 L 12.765223,8.255515 h 1.958449 z"
+       id="text4"
+       style="font-size:14.4556px;-inkscape-font-specification:sans-serif;fill:#fffffc;fill-opacity:1;stroke-width:0.495922"
+       aria-label="A" />
+    <path
+       d="m 18.130322,15.913752 -7.73114,0.224623 -0.4148862,-1.742793 5.2736022,-2.981141 -5.147725,0.67752 1.66556,-1.909122 5.075855,-0.7103432 -0.332823,2.6515212 -4.318616,2.723304 4.187631,-0.678036 z"
+       id="text5"
+       style="font-size:15.5697px;-inkscape-font-specification:sans-serif;fill:#2cb1bc;fill-opacity:1;stroke-width:0.301433"
+       aria-label="Z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.93308px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#2cb1bc;fill-opacity:1;stroke-width:0.272156"
+       x="21.416393"
+       y="15.937331"
+       id="text6"
+       transform="scale(1.0141451,0.98605219)"><tspan
+         id="tspan6"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:7.93308px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.272156"
+         x="21.416393"
+         y="15.937331">ApplyZen</tspan></text>
+  </g>
+</svg>
