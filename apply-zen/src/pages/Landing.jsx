@@ -1,6 +1,7 @@
 import React from "react";
 import icon from "../assets/icon.svg";
 import { useNavigate } from "react-router-dom";
+import assets from "../assets/assets";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -12,8 +13,8 @@ const Landing = () => {
         </div>
 
         {/*  */}
-        <div className="flex-grow flex items-center pt-[20vh] md:w-1/2 ">
-          <section className=" space-y-4">
+        <div className="flex-grow flex items-center pt-[20vh] ">
+          <section className=" space-y-4 md:w-1/2">
             <div className=" flex gap-3 font-bold text-3xl lg:text-6xl tracking-wider">
               <span>Job</span>
               <span className="text-primary">Tracking</span>
@@ -41,6 +42,9 @@ const Landing = () => {
                 Login
               </button>
             </div>
+          </section>
+          <section className=" flex items-center justify-center justify-items-center  max-md:hidden md:w-1/2">
+            <img src={assets.jobSearch} alt="job search image" className=" h-[250px]" />
           </section>
         </div>
       </div>
